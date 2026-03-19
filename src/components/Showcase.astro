@@ -1,0 +1,108 @@
+---
+const servers = [
+  { name: "Majestic RP | Warsaw", players: "764/1000", gamemode: "Roleplay", lang: "PL", color: "#8ee2aa" },
+  { name: "Majestic RP | Berlin", players: "891/1000", gamemode: "Roleplay", lang: "DE", color: "#8ee2aa" },
+  { name: "Lucid City RP", players: "423/600", gamemode: "Roleplay", lang: "EN", color: "#5b9ef5" },
+  { name: "GTW RPG", players: "312/500", gamemode: "RPG", lang: "PL", color: "#f5a05b" },
+  { name: "OVG Network", players: "198/400", gamemode: "Freeroam", lang: "EN", color: "#c45bf5" },
+  { name: "Cloud Roleplay", players: "567/800", gamemode: "Roleplay", lang: "TR", color: "#f55b5b" },
+];
+---
+
+<section class="relative py-20 md:py-32 px-4 md:px-6">
+  <div class="max-w-[1280px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left Column: Text -->
+      <div class="max-w-lg">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-6">
+          Built for even
+          <br />
+          more fun
+        </h2>
+        <p class="text-text-secondary text-base md:text-lg leading-relaxed mb-8">
+          alt:V provides a solid foundation for both players and developers.
+          Explore hundreds of custom servers with unique gamemodes, from immersive
+          roleplay experiences to action-packed freeroam worlds. Powered by a
+          high-performance core, alt:V delivers the smoothest multiplayer
+          experience available for GTA:V.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 text-accent hover:text-accent-dark transition-colors duration-200 font-medium text-sm group"
+        >
+          Explore all features
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+            <path d="M3 8H13M9 4L13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Right Column: Server List Mockup -->
+      <div class="relative">
+        <!-- Ambient glow behind the panel -->
+        <div class="absolute -inset-4 bg-accent/[0.03] rounded-3xl blur-2xl pointer-events-none"></div>
+
+        <div class="relative bg-surface border border-border rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+          <!-- Panel Header -->
+          <div class="flex items-center justify-between px-5 py-4 border-b border-border">
+            <div class="flex items-center gap-3">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-text-secondary">
+                <rect x="2" y="3" width="20" height="4" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <rect x="2" y="10" width="20" height="4" rx="1" stroke="currentColor" stroke-width="1.5" />
+                <rect x="2" y="17" width="20" height="4" rx="1" stroke="currentColor" stroke-width="1.5" />
+              </svg>
+              <span class="text-sm font-semibold text-white">Servers</span>
+              <span class="text-xs text-text-secondary bg-white/[0.06] px-2 py-0.5 rounded-full">
+                {servers.length}
+              </span>
+            </div>
+            <button class="p-1.5 text-text-secondary hover:text-white transition-colors duration-200 rounded-md hover:bg-white/5">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5" />
+                <path d="M16 16L20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Table Header -->
+          <div class="grid grid-cols-[1fr_90px_100px_50px] gap-2 px-5 py-2.5 text-xs font-medium text-text-secondary uppercase tracking-wider border-b border-border/60">
+            <span>Server name</span>
+            <span class="text-right">Players</span>
+            <span class="text-right">Gamemode</span>
+            <span class="text-right">Lang</span>
+          </div>
+
+          <!-- Server Rows -->
+          <div class="divide-y divide-border/40">
+            {servers.map((server, i) => (
+              <div class={`grid grid-cols-[1fr_90px_100px_50px] gap-2 px-5 py-3 items-center text-sm hover:bg-surface-hover transition-colors duration-150 cursor-pointer ${i === 0 ? 'bg-white/[0.02]' : ''}`}>
+                <div class="flex items-center gap-3 min-w-0">
+                  <span class="shrink-0 w-2 h-2 rounded-full" style={`background-color: ${server.color};`}></span>
+                  <span class="truncate text-white/90 font-medium">{server.name}</span>
+                </div>
+                <span class="text-right text-text-secondary tabular-nums text-xs">{server.players}</span>
+                <span class="text-right text-text-secondary text-xs">{server.gamemode}</span>
+                <span class="text-right text-text-secondary text-xs">{server.lang}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Panel Footer -->
+          <div class="flex items-center justify-between px-5 py-3 border-t border-border/60">
+            <span class="text-xs text-text-secondary">Showing top servers</span>
+            <a href="#" class="text-xs text-accent hover:text-accent-dark transition-colors duration-200 font-medium">
+              View all
+            </a>
+          </div>
+        </div>
+
+        <!-- Carousel Dots -->
+        <div class="flex items-center justify-center gap-2 mt-6">
+          <span class="w-2 h-2 rounded-full bg-white"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20"></span>
+          <span class="w-2 h-2 rounded-full bg-white/20"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

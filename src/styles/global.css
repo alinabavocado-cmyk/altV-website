@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0b0b0b;
+  --color-surface: #161616;
+  --color-surface-hover: #1c1c1c;
+  --color-border: #222222;
+  --color-border-light: #333333;
+  --color-text: #ffffff;
+  --color-text-secondary: #999999;
+  --color-accent: #8ee2aa;
+  --color-accent-dark: #6bc48e;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Framer Motion-style entrance animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-from-top {
+  from {
+    transform: translateY(-0.75rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-name: fade-in, slide-in-from-top;
+  animation-timing-function: ease-in-out;
+}
+
+.fade-in-0 {
+  animation-name: fade-in, slide-in-from-top;
+}
+
+.slide-in-from-top-3 {
+  /* This is handled by the keyframe above (0.75rem = 12px) */
+}
+
+.fill-mode-backwards {
+  animation-fill-mode: backwards;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.duration-1000 {
+  animation-duration: 1000ms;
+}
