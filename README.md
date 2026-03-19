@@ -1,6 +1,7 @@
 # alt:V Website Clone
 
 A clone of the [alt:V](https://altv.mp) website — the free GTA:V multiplayer modification. Built with Astro and Tailwind CSS as a fully static site.
+Powered by [vertex](https://vertexmods.com)
 
 ## Tech Stack
 
